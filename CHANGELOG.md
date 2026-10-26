@@ -1,5 +1,28 @@
 # Changelog
 
+## [4.19.38](https://github.com/DGEFP-1j1S/1j1s-etl/compare/v4.19.37...v4.19.38) (2026-10-26)
+
+
+### 🐛 Corrections de bogues
+
+* **deps:** update dependency axios to ~1.8.0 [security] ([86e20f8](https://github.com/DGEFP-1j1S/1j1s-etl/commit/86e20f84dd22b12c50506a6b36f15b0e4b2f7383))
+
+
+### 👷 Autres changements
+
+* ajouter un workflow manuel de diagnostic du state Terraform ([#624](https://github.com/DGEFP-1j1S/1j1s-etl/issues/624)) ([1ea2a6f](https://github.com/DGEFP-1j1S/1j1s-etl/commit/1ea2a6f7f8b6c56f032fab9b44a121a86cf87eed))
+* **deps:** lock file maintenance ([#582](https://github.com/DGEFP-1j1S/1j1s-etl/issues/582)) ([a0628c9](https://github.com/DGEFP-1j1S/1j1s-etl/commit/a0628c9b3acb1adc0c7b9ba6de6ed0ea5d6034cd))
+* **deps:** lock file maintenance ([#593](https://github.com/DGEFP-1j1S/1j1s-etl/issues/593)) ([57a7677](https://github.com/DGEFP-1j1S/1j1s-etl/commit/57a76773cc42736dca8986d9618b66df7de71cfa))
+* **deps:** lock file maintenance ([#597](https://github.com/DGEFP-1j1S/1j1s-etl/issues/597)) ([33bda0d](https://github.com/DGEFP-1j1S/1j1s-etl/commit/33bda0da579a0098e567104aed897a73ffea92b4))
+* **deps:** lock file maintenance ([#598](https://github.com/DGEFP-1j1S/1j1s-etl/issues/598)) ([699c843](https://github.com/DGEFP-1j1S/1j1s-etl/commit/699c843aa966354b7ad659fefc1c636c5b422338))
+* **deps:** update all non-major devdedependencies (minor) ([#588](https://github.com/DGEFP-1j1S/1j1s-etl/issues/588)) ([202f310](https://github.com/DGEFP-1j1S/1j1s-etl/commit/202f310f605a2d89aaf76da97319310cdaa56cd4))
+* **deps:** update dependency mocha to v11.0.2 ([#589](https://github.com/DGEFP-1j1S/1j1s-etl/issues/589)) ([4ae930b](https://github.com/DGEFP-1j1S/1j1s-etl/commit/4ae930b29c7b75dc4e49090e4931f99690764ca6))
+* **deps:** update dependency sinon to v20 ([90535d8](https://github.com/DGEFP-1j1S/1j1s-etl/commit/90535d8216014a57af4edd1a7c3bf595ee59fd24))
+* **deps:** update dependency typescript to ~5.8.0 ([6b806f2](https://github.com/DGEFP-1j1S/1j1s-etl/commit/6b806f25c6010eb67adcd32fde215814773facca))
+* mise a jour node et vulnérabilités critiques ([#622](https://github.com/DGEFP-1j1S/1j1s-etl/issues/622)) ([e4a7fb2](https://github.com/DGEFP-1j1S/1j1s-etl/commit/e4a7fb20b50f9b4cffb6b0251240037a60637e6c))
+* suite migration depot ([#623](https://github.com/DGEFP-1j1S/1j1s-etl/issues/623)) ([7bc3015](https://github.com/DGEFP-1j1S/1j1s-etl/commit/7bc3015ebc3005f4a5b68c927a5e0984673eaf4d))
+* upgrade node version to 22.14.0 ([fc6dd05](https://github.com/DGEFP-1j1S/1j1s-etl/commit/fc6dd054e67aaff18c4783594065d1693f1f58b1))
+
 ## [4.19.37](https://github.com/DNUM-SocialGouv/1j1s-etl/compare/v4.19.36...v4.19.37) (2025-01-07)
 
 
