@@ -22,14 +22,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DNUM-SocialGouv/1j1s-orchestrateur-transform-load.git"
+    "url": "git+https://github.com/DGEFP-1j1S/1j1s-etl.git"
   },
   "author": "OCTO Technology",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DNUM-SocialGouv/1j1s-orchestrateur-transform-load/issues"
+    "url": "https://github.com/DGEFP-1j1S/1j1s-etl/issues"
   },
-  "homepage": "https://github.com/DNUM-SocialGouv/1j1s-orchestrateur-transform-load#readme",
+  "homepage": "https://github.com/DGEFP-1j1S/1j1s-etl#readme",
   "dependencies": {
     "@nestjs/common": "~10.4.0",
     "@nestjs/config": "~3.3.0",
