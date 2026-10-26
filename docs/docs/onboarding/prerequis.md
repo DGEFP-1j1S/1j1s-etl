@@ -19,7 +19,7 @@ Il faut donc que ces deux outils soient installés dans les versions suivantes :
 
 ```json
 "engines": {
-    "node": "22.14.0",
+    "node": "22.23.4",
     "npm": "11.1.0"
 }
 ```

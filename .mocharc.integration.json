@@ -1,5 +1,6 @@
 {
   "extension": ["ts"],
   "spec": "apps/**/test/**/*.integration-test.ts",
-  "require": ["ts-node/register", "tsconfig-paths/register", "dotenv/config"]
+  "require": ["ts-node/register", "tsconfig-paths/register", "dotenv/config"],
+  "node-option": ["no-experimental-strip-types"]
 }
