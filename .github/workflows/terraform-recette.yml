@@ -10,7 +10,7 @@ on:
 
 jobs:
   recette:
-    # uses: DNUM-SocialGouv/1j1s-front/.github/workflows/terraform-template.yml@main
+    # uses: DGEFP-1j1S/1j1s-front/.github/workflows/terraform-template.yml@main
     uses: ./.github/workflows/opentofu-template.yml
     secrets: inherit
     with:
