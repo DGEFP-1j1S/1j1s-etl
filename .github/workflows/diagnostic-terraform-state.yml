@@ -1,0 +1,72 @@
+name: Diagnostic du state Terraform
+
+# Workflow manuel en lecture seule : il ne modifie ni le state Terraform ni Scalingo.
+# Il compare l'app enregistrée dans le state avec l'app réellement présente sur Scalingo.
+
+on:
+  workflow_dispatch:
+    inputs:
+      environnement_name:
+        description: "Environnement GitHub à diagnostiquer"
+        type: choice
+        options:
+          - scalingo-production
+          - scalingo-recette
+        default: scalingo-production
+
+jobs:
+  diagnostic:
+    name: Diagnostic
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.environnement_name }}
+
+    steps:
+      - name: Télécharger le code source
+        uses: actions/checkout@v4
+
+      - name: Installation de OpenTofu
+        uses: opentofu/setup-opentofu@v1.0.5
+        with:
+          tofu_version: "1.7.2"
+
+      - name: Exposer tous les secrets comme des variables d'environnement
+        uses: Firenza/secrets-to-env@v1.3.0
+        with:
+          secrets: ${{ toJSON(secrets) }}
+          env_var_name_lower_case_regex: (?<=TF_VAR_).*
+
+      - name: Exposer toutes les variables comme des variables d'environnement
+        uses: Firenza/secrets-to-env@v1.3.0
+        with:
+          secrets: ${{ toJSON(vars) }}
+          env_var_name_lower_case_regex: (?<=TF_VAR_).*
+
+      - name: Terraform Init
+        working-directory: terraform
+        run: tofu init -input=false -no-color
+
+      - name: Ressources présentes dans le state
+        working-directory: terraform
+        run: |
+          echo "Workspace : ${TF_WORKSPACE}"
+          tofu state list -no-color
+
+      - name: App enregistrée dans le state
+        working-directory: terraform
+        run: |
+          tofu state show -no-color module.etl_app.scalingo_app.app \
+            | grep -E '^\s+(id|name|url|git_url|region|stack_id) ' || true
+          echo "(si 'name' apparaît en ***, il est identique au secret TF_VAR_NOM_DE_L_APPLICATION)"
+
+      - name: App réellement présente sur Scalingo
+        run: |
+          BEARER=$(curl -sf -u ":${SCALINGO_API_TOKEN}" -X POST https://auth.scalingo.com/v1/tokens/exchange | jq -r .token)
+          echo "--- App portant le nom attendu (TF_VAR_NOM_DE_L_APPLICATION) :"
+          curl -s -H "Authorization: Bearer ${BEARER}" \
+            "https://api.${SCALINGO_REGION}.scalingo.com/v1/apps/${TF_VAR_nom_de_l_application}" \
+            | jq '.app // . | {id, name, created_at, owner: .owner.email}'
+          echo "--- Toutes les apps visibles avec ce token :"
+          curl -s -H "Authorization: Bearer ${BEARER}" \
+            "https://api.${SCALINGO_REGION}.scalingo.com/v1/apps" \
+            | jq -r '.apps[] | "\(.id)  \(.name)  créée le \(.created_at)"'
