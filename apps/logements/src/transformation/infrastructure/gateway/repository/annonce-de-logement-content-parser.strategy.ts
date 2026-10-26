@@ -1,3 +1,5 @@
+import { JPathOrMatcher } from "fast-xml-parser";
+
 import { Flux } from "@shared/src/domain/model/flux";
 import {
 	ContentParserStrategy,
@@ -28,11 +30,11 @@ export class AnnonceDeLogementContentParserStrategy implements ContentParserStra
  @doc https://github.com/NaturalIntelligence/fast-xml-parser/blob/master/docs/v4/2.XMLparseOptions.md#isarray
  */
 export class StudapartOptionXmlParser {
-  public static consideTagAsArray(name: string, jpath: string): boolean {
+  public static consideTagAsArray(name: string, jpath: JPathOrMatcher): boolean {
     const alwaysConsideredTagsAsArray = [
       "unjeuneunesolution.item.rooms",
       "unjeuneunesolution.item.pictures",
     ];
-    return alwaysConsideredTagsAsArray.indexOf(jpath) !== -1;
+    return typeof jpath === "string" && alwaysConsideredTagsAsArray.includes(jpath);
   }
 }
