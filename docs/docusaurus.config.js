@@ -19,14 +19,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // URL de votre site web. Cela peut également être considéré comme le nom d'hôte de premier niveau.
-  url: 'https://dnum-socialgouv.github.io/',
+  url: 'https://dgefp-1j1s.github.io/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '1j1s-etl/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'DNUM-SocialGouv', // Usually your GitHub org/user name.
+  organizationName: 'DGEFP-1j1S', // Usually your GitHub org/user name.
   projectName: '1j1s-etl', // Usually your repo name.
 
   // Cette option ajoute <meta name="robots" content="noindex, nofollow"> à chaque page,
@@ -57,7 +57,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/DNUM-SocialGouv/1j1s-etl/tree/main/docs/docs/',
+            'https://github.com/DGEFP-1j1S/1j1s-etl/tree/main/docs/docs/',
 
           lastVersion: 'current',
           versions: {
@@ -98,11 +98,11 @@ const config = {
           {
             position: 'left',
             label: 'Front',
-            href: 'https://dnum-socialgouv.github.io/1j1s-front/docs/architecture',
+            href: 'https://dgefp-1j1s.github.io/1j1s-front/docs/architecture',
             target: '_self',
           },
           {
-            "href": "https://dnum-socialgouv.github.io/1j1s-main-cms/docs/architecture",
+            "href": "https://dgefp-1j1s.github.io/1j1s-main-cms/docs/architecture",
             "label": "CMS",
             "position": "left",
             "target": "_self"
@@ -118,7 +118,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/DNUM-SocialGouv/1j1s-etl',
+            href: 'https://github.com/DGEFP-1j1S/1j1s-etl',
             label: 'Code source',
             position: 'right',
           },
@@ -132,15 +132,15 @@ const config = {
             items: [
               {
                 label: 'Front (sur Github)',
-                href: 'https://github.com/DNUM-SocialGouv/1j1s-front',
+                href: 'https://github.com/DGEFP-1j1S/1j1s-front',
               },
               {
                 label: 'CMS (sur Github)',
-                href: 'https://github.com/DNUM-SocialGouv/1j1s-main-cms',
+                href: 'https://github.com/DGEFP-1j1S/1j1s-main-cms',
               },
               {
                 label: 'ETL (sur Github)',
-                href: 'https://github.com/DNUM-SocialGouv/1j1s-etl',
+                href: 'https://github.com/DGEFP-1j1S/1j1s-etl',
               },
             ],
           },
